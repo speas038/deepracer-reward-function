@@ -3,6 +3,8 @@ def reward_function(params):
     Example of rewarding the agent to follow center line
     '''
     
+    print("Welcome to my function")
+
     # Read input parameters
     track_width = params['track_width']
     distance_from_center = params['distance_from_center']
@@ -53,3 +55,14 @@ def reward_function(params):
     print("reward: {}".format(reward))
     
     return float(reward)
+
+params = {'speed':5,
+          'track_width': 6,
+          'distance_from_center': 4,
+          'steering_angle':67,
+          'all_wheels_on_track':True,
+          'progress': .5,
+          'is_left_of_center': True}
+
+
+reward_function(params)
