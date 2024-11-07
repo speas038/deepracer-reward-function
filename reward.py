@@ -25,8 +25,8 @@ def reward_function(params):
 
     # Calculate 3 markers that are increasingly further away from the center line
     marker_1 = 0.1 * track_width
-    marker_2 = 0.5 * track_width
-    marker_3 = 0.9 * track_width
+    marker_2 = 0.4 * track_width
+    marker_3 = 0.7 * track_width
 
     # Give higher reward if the car is closer to center line and vice versa
     if distance_from_center <= marker_1:
@@ -86,10 +86,10 @@ def normalize_speed(speed, abs_steering):
 
 
 
-params = {'speed':5,
-          'track_width': 6,
-          'distance_from_center': 4,
-          'steering_angle':-25,
+params = {'speed':4,
+          'track_width': 4,
+          'distance_from_center': 2,
+          'steering_angle':-2,
           'all_wheels_on_track':True,
           'progress': 100,
           'is_left_of_center': False}
