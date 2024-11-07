@@ -25,8 +25,8 @@ def reward_function(params):
 
     # Calculate 3 markers that are increasingly further away from the center line
     marker_1 = 0.1 * track_width
-    marker_2 = 0.4 * track_width
-    marker_3 = 0.7 * track_width
+    marker_2 = 0.5 * track_width
+    marker_3 = 0.9 * track_width
 
     # Give higher reward if the car is closer to center line and vice versa
     if distance_from_center <= marker_1:
@@ -65,22 +65,19 @@ def reward_function(params):
         
     final_reward = weighted_speed_reward + weighted_progress_reward + weighted_location_reward
 
-    print("Weighted progress reward: {}".format(weighted_progress_reward))
-    print("Weighted speed_reward {}".format(weighted_speed_reward))
-    print("Weighted location reward: {}".format(weighted_location_reward))
-    print("Location reward: {}".format(location_reward))
-    print("Final reward: {}".format(final_reward))
+    # print("Weighted progress reward: {}".format(weighted_progress_reward))
+    # print("Weighted speed_reward {}".format(weighted_speed_reward))
+    # print("Weighted location reward: {}".format(weighted_location_reward))
+    # print("Location reward: {}".format(location_reward))
+    # print("Final reward: {}".format(final_reward))
 
     return float(final_reward)
-
-
-
+    
 #Return a value between 0 and 1 for speed ( we will weight it later)    
 def normalize_speed(speed, abs_steering):
     #Lets say we are happy with a 1m/s slowdown per 10Degrees
     normalized_speed = speed/4
     return float(normalized_speed)
-
 
 ##TESTS##
 
